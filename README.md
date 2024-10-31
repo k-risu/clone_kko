@@ -1,69 +1,71 @@
-# 카카오 블로그
+# 카드리스트 만들기
 
-## 1. css
+## 1. 주의 사항
 
-- 영역에 이미지 모두 보이도록 처리(단점: 공백이 존재)
-
-```css
-img {
-  object-fit: contain;
-}
+```
+a 태그는 너비와 높이를 줄 수 없다.
+이유는 초기 값이 display: inline 이라서.
 ```
 
-- 영역에 이미지 가운데 정렬되면서 보이도록 이미지 처리(단점 : 이미지 일부 가림처리)
-
-```css
-img {
-  object-fit: cover;
-}
+```
+a 태그의 너비, 높이, 마진, 패딩 주려면
+display: block 을 손으로 적어준다.
+팁 display: flex 를 준다.
 ```
 
-## 2. css 에서 글꼴 읽어오기
-
-- 사이트 작업 진행 전에 반드시 글꼴에 대해서 준비를 해야 함.
-- 디자이너에게 글꼴을 명시받아야 함.
-- 웹용 폰트 즉, 웹브라우저용 폰트는 온라인 에서 구함.
-- 웹용 폰트가 없으면 우리가 만들어서 사용함.
-
-### 2.1. 구글폰트
-
-- https://fonts.google.com/
-- 글꼴 배치 순서를 조심하세요.
-- Get Font 에서 @import 를 활용한다.
-
-### 2.2. 눈누
-
-- https://noonnu.cc/
-- 웹포트로 사용에서 소스 코드를 복사해서 활용
-
-### 2.3 글꼴을 잘 하시는 에이전시 사이트
-
-- https://www.webtro.co.kr/
-- https://www.gdweb.co.kr/main/
-
-## 3. 글꼴은 common.css 에 작성하자.
-
-- 모든 페이지에 적용될 공통 css 작성 파일
-
-```css
-@charset "utf-8";
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
-
-* {
-  margin: 0px;
-  padding: 0;
-  box-sizing: border-box;
-  /* outline-style: none; */
-}
+```
+span 태그는 너비와 높이를 줄 수 없다.
+이유는 초기 값이 display: inline 이라서.
 ```
 
-```css
-body {
-  font-family: "Inter", "Noto Sans KR", sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-optical-sizing: auto;
-  color: #000000;
-}
 ```
+span 태그의 너비, 높이, 마진, 패딩 주려면
+display: block 을 손으로 적어준다.
+팁 display: flex 를 준다.
+```
+
+## 2. 정말 중요한 내용
+
+### 2.1. position 을 필수로 이해하셔야 해요.
+
+#### 2.1.2. postion:fixed
+
+```
+웹 브라우저 기준으로 위치 고정
+스크롤 되어도
+화면이 넓어도
+화면이 좁아도
+화면이 짧아도
+위치고정
+```
+
+- 주의사항
+
+```
+postion: fixed 하면 웹브라우저 기준이라서 화면에 보이는 내용의 레이아웃에서 높이가 반영이 안된다.
+```
+
+```
+postion: fixed 하면 너비를 주셔야 합니다.
+배경색도 주셔야 합니다.
+웹브라우저 기준으로 left, top, bottom, right 도 설정
+```
+
+```
+position:fixed 하시면 우선 전체너비를 기준이로 내용으로 구분해서 div 구성하시기를 추천합니다.
+```
+
+```
+화면 즉, z-index 값을 많이 줍니다.
+z-index: 999999999999
+```
+
+#### 2.1.3. postion:absolute
+
+- fixed 와 똑 같다.
+- 차이점은 body를 기준으로 한다.
+- 반드시 원하는 css 에 relative 가 있으면 기준이 바뀐다.
+
+#### 2.1.4. postion:relative
+
+- absolute 의 기준을 세운다.
