@@ -8,6 +8,20 @@
   box-sizing: border-box;
   /* outline-style: none; */
 }
+a {
+  color: #1e1e1e;
+  text-decoration: none;
+}
+ul,
+ol,
+li {
+  list-style: none;
+}
+html {
+  font-size: 14px;
+  overflow-x: hidden;
+}
+
 body {
   font-family: "Inter", "Noto Sans KR", sans-serif;
   font-style: normal;
