@@ -1,71 +1,158 @@
-# 카드리스트 만들기
+# 참고사항
 
-## 1. 주의 사항
+## 1. 아이콘 폰트
 
-```
-a 태그는 너비와 높이를 줄 수 없다.
-이유는 초기 값이 display: inline 이라서.
-```
+- https://fontawesome.com
+- https://xpressengine.github.io/XEIcon
+  : index.html <link> 태그 확인
 
-```
-a 태그의 너비, 높이, 마진, 패딩 주려면
-display: block 을 손으로 적어준다.
-팁 display: flex 를 준다.
-```
+### 1.1. 본프로젝트 활용 아이콘 폰트
 
-```
-span 태그는 너비와 높이를 줄 수 없다.
-이유는 초기 값이 display: inline 이라서.
-```
+- https://react-icons.github.io/react-icons
 
-```
-span 태그의 너비, 높이, 마진, 패딩 주려면
-display: block 을 손으로 적어준다.
-팁 display: flex 를 준다.
-```
+## 2. css 초기화
 
-## 2. 정말 중요한 내용
+- reset.css
+  : https://meyerweb.com/eric/tools/css/reset/reset.css
+  : 간략한 정리
+- normalize.css
+  : https://necolas.github.io/normalize.css/8.0.1/normalize.css
+  : 상세한 정리
 
-### 2.1. position 을 필수로 이해하셔야 해요.
+- 내가 만든 common.css 파일
 
-#### 2.1.2. postion:fixed
+```css
+@charset "utf-8";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
 
-```
-웹 브라우저 기준으로 위치 고정
-스크롤 되어도
-화면이 넓어도
-화면이 좁아도
-화면이 짧아도
-위치고정
-```
+* {
+  margin: 0px;
+  padding: 0;
+  box-sizing: border-box;
+  /* outline-style: none; */
+}
+a {
+  color: #1e1e1e;
+  text-decoration: none;
+}
+ul,
+ol,
+li {
+  list-style: none;
+}
+html {
+  font-size: 14px;
+  overflow-x: hidden;
+}
 
-- 주의사항
-
-```
-postion: fixed 하면 웹브라우저 기준이라서 화면에 보이는 내용의 레이아웃에서 높이가 반영이 안된다.
-```
-
-```
-postion: fixed 하면 너비를 주셔야 합니다.
-배경색도 주셔야 합니다.
-웹브라우저 기준으로 left, top, bottom, right 도 설정
-```
-
-```
-position:fixed 하시면 우선 전체너비를 기준이로 내용으로 구분해서 div 구성하시기를 추천합니다.
-```
-
-```
-화면 즉, z-index 값을 많이 줍니다.
-z-index: 999999999999
+body {
+  font-family: "Inter", "Noto Sans KR", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-optical-sizing: auto;
+  color: #1e1e1e;
+  font-size: 14px;
+}
 ```
 
-#### 2.1.3. postion:absolute
+- 필수 주의 사항
 
-- fixed 와 똑 같다.
-- 차이점은 body를 기준으로 한다.
-- 반드시 원하는 css 에 relative 가 있으면 기준이 바뀐다.
+```
+반드시 reset 또는 normalize 를 먼저배치하고 본인의 css 를 배치해야합니다.
+그렇지 않으면 나의 css 가 덮어써 져서 정상적 구성이 불가능
+```
 
-#### 2.1.4. postion:relative
+```html
+<link
+  rel="stylesheet"
+  href="https://meyerweb.com/eric/tools/css/reset/reset.css"
+/>
+<link
+  rel="stylesheet"
+  href="https://necolas.github.io/normalize.css/8.0.1/normalize.css"
+/>
+<link
+  rel="stylesheet"
+  href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
+/>
+<link rel="stylesheet" href="./css/common.css" />
+<link rel="stylesheet" href="./css/header.css" />
+<link rel="stylesheet" href="./css/main.css" />
+<link rel="stylesheet" href="./css/card-list.css" />
+<link rel="stylesheet" href="./css/footer.css" />
+```
 
-- absolute 의 기준을 세운다.
+## 3. inline, block, inline-block 정리
+
+### 3.1. display:inline
+
+- display : inline
+
+```
+<span>, <b>, <strong>, <a>, <img> ...
+```
+
+- 가로로 배치된다.
+- 너비, 높이 비활성
+- 패딩, 마진 일부 미지원
+- 글자처럼 옆으로 계속 배치된다.
+
+### 3.2. display:block
+
+```
+<div>, <header>, <main>, <footer>, <ul>, <li>, <h1>, <h2> ....
+```
+
+- 자동으로 너비가 100% 기본값
+- 너비, 높이, 마진, 패딩... 모두 가능
+
+### 3.3. display:inline-block
+
+- inline 이면서 너비, 높이등을 셋팅, 즉 block 도 같이 부여
+- display:inline-block
+- 기본너비는 지정하지 않으면 내용물 만큼 소비
+- 가로로 연속 배치가 가능하다.
+
+## 4. CSS 정리
+
+- VSCode : PostCSS Sorting 설치
+
+```
+정렬 속성 셋팅
+관리 도구 > 설정 메뉴 > setting.json 검색 > 파란색 글자 seeting.json 찾아서 클릭
+```
+
+- 다음 항목을 추가 한다.(쉼표!!! 꼭 넣어주자)
+
+```json
+"postcssSorting.config": {
+  "properties-order": ["display", "list-style", "position", "top", "right", "bottom", "left", "float", "clear", "width", "height", "padding", "margin", "border", "background", "color", "font", "font-weight", "font-size", "line-height", "font-family", "letter-spacing", "text-decoration", "text-align", "verticla-align", "white-space", "content", "animation"]
+}
+```
+
+- 키보드 단축키 셋팅하기
+
+```
+관리 도구 > 바로 가기 키 > 클릭 > post 검색 > 중복 안된키 조합
+Ctrl + Alt + C 로 설정
+```
+
+## 5. CSS 표준검사
+
+- https://jigsaw.w3.org/css-validator
+- https://caniuse.com
+
+## 6. html 표준검사
+
+- https://validator.w3.org
+- https://caniuse.com
+
+## 7. favicon
+
+- 예의, 신뢰도 향상
+- https://realfavicongenerator.net
+
+```html
+<link rel="icon" href="경로/파일명" type="image/x-icon" />
+```
