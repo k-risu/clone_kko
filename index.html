@@ -21,6 +21,8 @@
     <link rel="stylesheet" href="./css/common.css" />
     <link rel="stylesheet" href="./css/header.css" />
     <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/main-slide.css" />
+    <link rel="stylesheet" href="./css/main-content.css" />
     <link rel="stylesheet" href="./css/card-list.css" />
     <link rel="stylesheet" href="./css/footer.css" />
   </head>
@@ -28,7 +30,8 @@
   <body>
     <!-- 먼저 레이아웃을 잡기위해 주석작성 및 div 를 사용한다. -->
     <!-- div 는 레이아웃 용 이외에는 용도가 없다. -->
-
+    <!-- 반투명 배경 -->
+    <div class="bg-mb-menu"></div>
     <!-- 상단 영역 -->
     <header class="header">
       <div class="layout">
@@ -50,9 +53,21 @@
           <button id="search">
             <img src="./images/icon/icon-search.png" alt="" />
           </button>
+          <!-- 모바일 메뉴  -->
+          <button id="mb-menu-bt">
+            <img src="./images/icon/icon-hbr.png" alt="모바일메뉴" />
+          </button>
         </div>
       </div>
     </header>
+    <!-- 모바일용 메뉴 -->
+    <div class="mb-menu">
+      <div class="layout">
+        <a href="#">소식</a>
+        <a href="#">팀 & 크루</a>
+        <a href="#">영입</a>
+      </div>
+    </div>
     <!-- 내용영역 -->
     <main class="main">
       <div class="layout">
