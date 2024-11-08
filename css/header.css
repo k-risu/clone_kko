@@ -12,7 +12,7 @@
   background-color: #ffffff;
 }
 .header-active {
-  border-bottom: 1px solid red !important;
+  border-bottom: 1px solid #e6e5e6 !important;
 }
 .header .layout {
   display: flex;
