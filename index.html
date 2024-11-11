@@ -33,6 +33,11 @@
     <link rel="stylesheet" href="./css/footer.css" />
     <script src="./js/header.js"></script>
     <script src="./js/main.js"></script>
+
+    <script src="./js/news.js"></script>
+    <script src="./js/card.js"></script>
+    <script src="./js/crew.js"></script>
+
     <script src="./js/footer.js"></script>
     <script src="./js/slide-main.js"></script>
     <script src="./js/slide-logo.js"></script>
@@ -54,7 +59,8 @@
 
           <div class="swiper header-logo-motion">
             <div class="swiper-wrapper">
-              <div class="swiper-slide">
+              <!-- json 데이터를 출력한다 -->
+              <!-- <div class="swiper-slide">
                 <img src="./images/etc/logo-blog01.png" alt="" />
               </div>
               <div class="swiper-slide">
@@ -80,7 +86,7 @@
               </div>
               <div class="swiper-slide">
                 <img src="./images/etc/logo-blog09.png" alt="" />
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
@@ -163,7 +169,7 @@
               <h4 class="list-title">NEW. 따끈따끈 새로 나온 글 🔥</h4>
               <div class="list-thum-wrap">
                 <!--@Start 게시글 목록 -->
-                <div class="list">
+                <div class="list" id="news-api">
                   <a href="#" class="thum">
                     <div class="thum-img">
                       <img src="./images/c1.jpg" alt="뉴스" />
@@ -219,7 +225,7 @@
             <!-- 카테고리 목록 -->
             <div class="list-cate-wrap">
               <h4 class="list-title">NEW. 따끈따끈 새로 나온 글 🔥</h4>
-              <div class="list-thum-wrap">
+              <div class="list-thum-wrap" id="crew">
                 <!--@Start 게시글 목록 -->
                 <div class="list">
                   <a href="#" class="thum">
@@ -265,8 +271,6 @@
                     <span class="thum-date">2024.10.29</span>
                   </a>
                 </div>
-                <!--@End  -->
-                <!--@Start 게시글 목록 -->
                 <div class="list">
                   <a href="#" class="thum">
                     <div class="thum-img">
@@ -325,6 +329,17 @@
             <!-- 카트 전체 목록 -->
             <div class="list-card">
               <!--@Start card -->
+              <!-- api 연동 -->
+              <!-- <a href="#" class="card-wrap">
+                <div class="card-img">
+                  <img src="./images/p1.png" alt="card" />
+                </div>
+
+                <div class="card-info">
+                  <h5 class="card-cate">LLMs</h5>
+                  <span class="card-count">5</span>
+                </div>
+              </a>
               <a href="#" class="card-wrap">
                 <div class="card-img">
                   <img src="./images/p1.png" alt="card" />
@@ -335,8 +350,6 @@
                   <span class="card-count">5</span>
                 </div>
               </a>
-              <!--@End card -->
-              <!--@Start card -->
               <a href="#" class="card-wrap">
                 <div class="card-img">
                   <img src="./images/p1.png" alt="card" />
@@ -347,8 +360,6 @@
                   <span class="card-count">5</span>
                 </div>
               </a>
-              <!--@End card -->
-              <!--@Start card -->
               <a href="#" class="card-wrap">
                 <div class="card-img">
                   <img src="./images/p1.png" alt="card" />
@@ -359,8 +370,6 @@
                   <span class="card-count">5</span>
                 </div>
               </a>
-              <!--@End card -->
-              <!--@Start card -->
               <a href="#" class="card-wrap">
                 <div class="card-img">
                   <img src="./images/p1.png" alt="card" />
@@ -370,19 +379,7 @@
                   <h5 class="card-cate">LLMs</h5>
                   <span class="card-count">5</span>
                 </div>
-              </a>
-              <!--@End card -->
-              <!--@Start card -->
-              <a href="#" class="card-wrap">
-                <div class="card-img">
-                  <img src="./images/p1.png" alt="card" />
-                </div>
-
-                <div class="card-info">
-                  <h5 class="card-cate">LLMs</h5>
-                  <span class="card-count">5</span>
-                </div>
-              </a>
+              </a> -->
               <!--@End card -->
             </div>
             <div class="list-card-bt-wrap">
