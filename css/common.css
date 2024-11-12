@@ -3,16 +3,30 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
 
 * {
-  margin: 0px;
   padding: 0;
+  margin: 0px;
   box-sizing: border-box;
   /* outline-style: none; */
 }
+a {
+  color: #1e1e1e;
+  text-decoration: none;
+}
+ul,
+ol,
+li {
+  list-style: none;
+}
+html {
+  font-size: 14px;
+  overflow-x: hidden;
+}
+
 body {
+  color: #1e1e1e;
+  font-weight: 400;
+  font-size: 14px;
   font-family: "Inter", "Noto Sans KR", sans-serif;
   font-style: normal;
-  font-weight: 400;
   font-optical-sizing: auto;
-  color: #1e1e1e;
-  font-size: 14px;
 }
