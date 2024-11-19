@@ -14,7 +14,7 @@ window.addEventListener("load", function () {
         // 변경 : 지금의 내용은 문법 아닙니다.
         // 변경 : 지금 변경되는 내용은 프로그래머가 생각을 표현하고 문제 해결시도
         const tag = `
-        <div class="swiper-slide" data-pc="${obj.pc}" data-mb="${obj.mb}>
+        <div class="swiper-slide" data-pc="${obj.pc}" data-mb="${obj.mb}">
                   <a href="${obj.url}" style="position: relative;">
                     <img src="./images/${obj.pic}" alt="${obj.title}" />
                   </a>
@@ -67,7 +67,7 @@ window.addEventListener("load", function () {
       const tagRight = `
       <div class="card-slide" style="position: relative;object-fit: cover;">
         <a href="#" >
-        <img src="./images/c3.png" alt="배너이미지"  sytle="object-fit: cover;"/>
+        <img src="./images/c3.png" alt="배너이미지"  />
         </a>
         <div style="
             position:absolute; bottom: 0; right: 0; color:#ffffff;
