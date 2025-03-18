@@ -2,7 +2,7 @@
 
 ## 메인사이트
 
-![Image](https://github.com/user-attachments/assets/5bf5c7ea-54ab-4700-ae09-0217763797db)
+![Image](https://github.com/user-attachments/assets/d383f18b-4afe-4556-9a4c-7de29b08f202)
 
 ## 작업 정보
 
