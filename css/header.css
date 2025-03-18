@@ -85,7 +85,7 @@
   opacity: 0;
   visibility: hidden;
 
-  transition: all 0.5s;
+  transition: all 0.2s ease-in-out;
   transition-duration: 0.5s;
   /* transition-property: all; */
   /* display: none; */
@@ -95,6 +95,7 @@
   opacity: 1 !important;
   visibility: visible !important;
   /* display: block !important; */
+  z-index: 999;
 }
 
 .mb-menu {
